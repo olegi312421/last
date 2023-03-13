@@ -26,7 +26,4 @@ urlpatterns = [
     path('registration/', registration_view, name='registration_view'),
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-]
-if not settings.DEBUG:
-    app = Flask(__name__, static_url_path='/static')
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

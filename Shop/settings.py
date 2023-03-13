@@ -1,7 +1,9 @@
 import os
 from pathlib import Path
 import django_heroku
+from flask import Flask, render_template, url_for
 
+app = Flask(__name__, static_url_path='/static')
 django_heroku.settings(locals(), staticfiles=False)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
