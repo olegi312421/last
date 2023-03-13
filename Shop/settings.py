@@ -24,7 +24,7 @@ if not all([DB_NAME, DB_PASSWORD, DB_USER, DB_HOST, DB_PORT]):
     raise ValueError("Missing database credentials. Set the DB_NAME, DB_PASSWORD, DB_USER, DB_HOST, and DB_PORT environment variables.")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['italian-restaurantt.herokuapp.com']
 
