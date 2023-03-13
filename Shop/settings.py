@@ -4,7 +4,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -17,11 +16,6 @@ DB_USER = os.environ.get('DB_USER')
 DB_HOST = os.environ.get('DB_Host')
 DB_PORT = os.environ.get('DB_PORT')
 
-if not SECRET_KEY:
-    raise ValueError("No secret key found. Set the SECRET_KEY environment variable.")
-
-if not all([DB_NAME, DB_PASSWORD, DB_USER, DB_HOST, DB_PORT]):
-    raise ValueError("Missing database credentials. Set the DB_NAME, DB_PASSWORD, DB_USER, DB_HOST, and DB_PORT environment variables.")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,6 +72,7 @@ WSGI_APPLICATION = 'Shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'SECRET_KEY': SECRET_KEY,
         'NAME': DB_NAME,
         'USER': DB_USER,
         'PASSWORD': DB_PASSWORD,
