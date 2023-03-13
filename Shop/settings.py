@@ -10,12 +10,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = ('SECRET_KEY')
-DB_NAME = ('DB_NAME')
-DB_PASSWORD = ('DB_PASSWORD')
-DB_USER = ('DB_USER')
-DB_HOST = ('DB_Host')
-DB_PORT = ('DB_PORT')
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DB_NAME = os.environ.get('DB_NAME')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_USER = os.environ.get('DB_USER')
+DB_HOST = os.environ.get('DB_HOST')
+DB_PORT = os.environ.get('DB_PORT')
 
 if not SECRET_KEY:
     raise ValueError("No secret key found. Set the SECRET_KEY environment variable.")
