@@ -18,7 +18,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from account.views import registration_view, login_view, logout_view
-from flask import Flask, render_template, url_for
 
 urlpatterns = [
     path('logout/', logout_view, name='logout_view'),
