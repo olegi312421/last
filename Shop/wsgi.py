@@ -14,13 +14,3 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Shop.settings')
 
 application = get_wsgi_application()
-
-
-def application(environ, start_response):
-    start_response('200 OK', [('Content-Type', 'text/html')])
-    output = '<html><body>'
-    output += '<h1>WSGI Environment</h1>'
-    for key, value in environ.items():
-        output += '<p><b>%s</b>: %s</p>' % (key, value)
-    output += '</body></html>'
-    return [output.encode()]
